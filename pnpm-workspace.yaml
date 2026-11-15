@@ -1,0 +1,11 @@
+
+packages:
+  - "apps/*"
+  - "packages/*"
+allowBuilds:
+  '@prisma/engines': true
+  '@scarf/scarf': true
+  argon2: true
+  prisma: true
+minimumReleaseAgeExclude:
+  - expo@58.0.25

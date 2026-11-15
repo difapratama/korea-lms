@@ -1,0 +1,11 @@
+
+{
+  "name": "korea-lms",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev:mobile": "pnpm --dir apps/mobile start",
+    "dev:api": "pnpm --dir apps/api start:dev",
+    "dev:admin": "pnpm --dir apps/admin dev"
+  }
+}

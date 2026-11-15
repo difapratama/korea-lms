@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Local environment; only sanitized examples belong in Git
+.env
+.env.*
+!.env.example
+
+# Build output and caches
+dist/
+build/
+.next/
+out/
+.expo/
+web-build/
+.turbo/
+coverage/
+*.tsbuildinfo
+*.log
+
+# Generated Prisma clients
+/apps/api/src/generated/prisma/
+/apps/api/generated/prisma/
+/apps/api/prisma/..src/generated/prisma/
+
+# Local deployment state
+.vercel/
+.netlify/
+
+# Private keys and signing credentials
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.mobileprovision
+
+# Local database files and backups (keep Prisma SQL migrations)
+*.dump
+*.backup
+*.sqlite
+*.sqlite3
+*.db
+
+# OS/editor temporary files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
