@@ -102,6 +102,20 @@ HTTPS memerlukan metode autentikasi GitHub yang didukung, misalnya credential ma
 
 ## 6. Push pertama dan verifikasi
 
+### Jika helper tidak tersedia atau password ditolak
+
+Error `credential-manager-core is not a git command` berarti Git menunjuk credential helper yang tidak terpasang. Nonaktifkan helper tersebut khusus repository ini tanpa mengubah konfigurasi global:
+
+```bash
+git config --local --replace-all credential.helper ''
+```
+
+Nilai kosong lokal mereset daftar helper yang diwarisi dari konfigurasi global. Untuk push HTTPS tanpa credential manager, buat **fine-grained personal access token** di GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens. Pilih pemilik repository yang benar, batasi akses ke `korea-lms`, dan beri repository permission **Contents: Read and write** dengan masa berlaku yang sesuai.
+
+Jalankan `git push -u origin main` kembali. Isi username GitHub, lalu tempel token pada prompt `Password`, bukan password akun. Terminal biasanya tidak menampilkan karakter saat token ditempel. Jangan kirim token ke chat, simpan dalam repository, atau masukkan ke URL remote. Dengan helper kosong ini, token tidak disimpan oleh Git credential helper sehingga autentikasi dapat diminta lagi pada push berikutnya.
+
+Jika tetap ditolak, periksa pemilik repository, pilihan repository pada token, izin Contents, masa berlaku, serta persetujuan organisasi bila berlaku.
+
 Untuk remote kosong yang sudah diperiksa:
 
 ```bash
